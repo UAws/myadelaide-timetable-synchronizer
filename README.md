@@ -1,0 +1,1 @@
+# myadelaide-timetable-synchronizer-
