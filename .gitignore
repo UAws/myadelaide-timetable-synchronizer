@@ -1,0 +1,10 @@
+
+spider/.env.dev
+
+.idea/
+
+my.ics
+
+*.ics
+
+*/**/__pycache__/
