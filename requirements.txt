@@ -1,0 +1,8 @@
+background==0.2.1
+ics==0.7
+loguru==0.5.3
+PyJWT==2.3.0
+python-dotenv==0.19.2
+pytz==2021.3
+requests==2.27.1
+pyjwt[crypto]==2.3.0
