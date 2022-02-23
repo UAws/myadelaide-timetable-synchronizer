@@ -10,3 +10,4 @@ webdriver-manager==3.5.3
 dataclasses~=0.6
 selenium~=4.1.0
 selenium-wire~=4.6.1
+PyAutoGUI~=0.9.53

@@ -6,25 +6,21 @@
 import time
 from loguru import logger
 from selenium.webdriver.support import expected_conditions
-from seleniumwire import webdriver  # Import from seleniumwire
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
+
+from selenium_controller.driver import driver
 
 
 class AutoAuth:
 
     def __init__(self):
 
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = driver
         self.jwt_token = ''
-
-    def __del__(self):
-        self.driver.close()
 
     # This function will wait for login to myadelaide panel and retrieve the authorization Bearer from header
     # the stop condition is api.adelaide.edu.au has been accessed with Authorization header
-    def _wait_until_login_to_myadelaide(self, driver):
+    def _wait_until_login_to_myadelaide(self):
 
         while True:
 
@@ -48,7 +44,7 @@ class AutoAuth:
 
         self.driver.get(url)
 
-        WebDriverWait(self.driver, timeout=30 * 5).until(self._wait_until_login_to_myadelaide(self.driver))
+        WebDriverWait(self.driver, timeout=30 * 5).until(self._wait_until_login_to_myadelaide())
 
     def init(self):
 
