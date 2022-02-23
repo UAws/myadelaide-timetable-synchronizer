@@ -30,8 +30,8 @@ http_request_headers = {
 }
 
 
-def preprocess_jwt_token():
-    raw_token = os.getenv('MYADELAIDE_BEARER_TOKEN')
+def preprocess_jwt_token(raw_token):
+
     if 'Bearer ' in raw_token:
         return raw_token.replace('Bearer ', '')
     else:
@@ -40,8 +40,15 @@ def preprocess_jwt_token():
 
 class Spider:
 
-    def __init__(self):
-        self.jwt_token = preprocess_jwt_token()
+    def __init__(self, auth_token=''):
+
+        if auth_token is None:
+            self.jwt_token = preprocess_jwt_token(os.getenv('MYADELAIDE_BEARER_TOKEN'))
+        else:
+            self.jwt_token = preprocess_jwt_token(auth_token)
+
+        logger.debug(self.jwt_token)
+
         http_request_headers['Authorization'] = 'Bearer ' + self.jwt_token
         self.myadelaide_api_endpoint = os.getenv('TIMETABLE_API_ENDPOINT')
         self.student_id = self.decode_jwt_token()

@@ -1,7 +1,7 @@
 from datetime import datetime
 from unittest import TestCase
 
-from s_calendar.calendar_generator import Calendar_generator
+from calendar_controller.calendar_generator import Calendar_generator
 from spider.adt.course import Course
 
 # sample data

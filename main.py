@@ -1,9 +1,10 @@
-from s_calendar.calendar_generator import Calendar_generator
+from calendar_controller.calendar_generator import Calendar_generator
+from selenium_controller.auto_auth import AutoAuth
 from spider.spider import Spider
 
 
 def main():
-    list = Spider().init()
+    list = Spider(auth_token=AutoAuth().init()).init()
     Calendar_generator.generate_calendar(list)
 
 

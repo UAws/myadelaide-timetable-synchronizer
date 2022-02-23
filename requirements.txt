@@ -1,8 +1,12 @@
 background==0.2.1
 ics==0.7
-loguru==0.5.3
+loguru==0.6.0
 PyJWT==2.3.0
 python-dotenv==0.19.2
 pytz==2021.3
 requests==2.27.1
 pyjwt[crypto]==2.3.0
+webdriver-manager==3.5.3
+dataclasses~=0.6
+selenium~=4.1.0
+selenium-wire~=4.6.1
