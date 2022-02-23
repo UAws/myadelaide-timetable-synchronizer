@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from sys import platform
 import pathlib
 import time
 from loguru import logger
@@ -25,7 +25,8 @@ class AutoUpload:
 
         now = datetime.now()
 
-        calendar_name = 'Course Timetable {_year} semester {_number}'.format(_year=now.year, _number=1 if now.month < 7 else 2)
+        calendar_name = 'Course Timetable {_year} semester {_number}'.format(_year=now.year,
+                                                                             _number=1 if now.month < 7 else 2)
 
         # Step # | name | target | value
         # 1 | open | /calendar/view/week |
@@ -45,18 +46,34 @@ class AutoUpload:
         self._wait_until_find(By.XPATH, "//div[6]/div/div/button/span/span").click()
         # 8 | click | xpath=//button[@id='ImportFromFile']/span/div |
         self._wait_until_find(By.XPATH, "//button[@id=\'ImportFromFile\']/span/div").click()
+
+        # self.driver.execute_script("""
+        #         document.addEventListener('click', function(evt) {
+        #           if (evt.target.type === 'file')
+        #             evt.preventDefault();
+        #         }, true)
+        #
+        #         document.querySelectorAll('input')[1].disabled = false;
+        #         """)
         # 9 | click | xpath=//div[2]/div/div/div/div[2]/div/button/span/span/span |
-        self._wait_until_find(By.XPATH, "//div[2]/div/div/div/div[2]/div/button/span/span/span").click()
-        # 10 | type | xpath=//div[2]/div/input | /Users/akide/Downloads/my.ics
-        # self._wait_until_find(By.XPATH, "//div[2]/div/input").send_keys(
-        #     '{current_dir}/my.ics'.format(current_dir=pathlib.Path().resolve()))
+        # self._wait_until_find(By.XPATH, "//div[2]/div/div/div/div[2]/div/button/span/span/span").click()
+
         # https://stackoverflow.com/a/58051573/14207562
-        pyautogui.write('{current_dir}/my.ics'.format(current_dir=pathlib.Path().resolve()))
-        pyautogui.press('enter')
+        # pyautogui.write('{current_dir}/my.ics'.format(current_dir=pathlib.Path().resolve()))
+        # pyautogui.press('enter')
+
+        # 10 | type | xpath=//div[2]/div/input | /Users/akide/Downloads/my.ics
+        self.driver.find_element(By.XPATH, "//div[2]/div/input").send_keys(
+            '{current_dir}/my.ics'.format(current_dir=pathlib.Path().resolve()))
+
         # 11 | click | xpath=//span[contains(.,'Select a calendar')] |
         self._wait_until_find(By.XPATH, "//span[contains(.,\'Select a calendar\')]").click()
+
+        time.sleep(1)
+
         # 12 | click | xpath=//div[6]/div/div/div/div/div/div/button[4]/span |
-        self.driver.find_elements_by_xpath( "//button/span[contains(.,\'{name}\')]".format(name=calendar_name))[1].click()
+        self.driver.find_elements_by_xpath("//button/span[contains(.,\'{name}\')]".format(name=calendar_name))[
+            1].click()
         # 13 | click | xpath=//div[3]/div/div/button/span/span/span |
         self._wait_until_find(By.XPATH, "//div[3]/div/div/button/span/span/span").click()
 
