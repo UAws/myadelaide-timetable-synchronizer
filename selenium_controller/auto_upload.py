@@ -68,7 +68,6 @@ class AutoUpload:
 
         # 11 | click | xpath=//span[contains(.,'Select a calendar')] |
         self._wait_until_find(By.XPATH, "//span[contains(.,\'Select a calendar\')]").click()
-
         time.sleep(1)
 
         # 12 | click | xpath=//div[6]/div/div/div/div/div/div/button[4]/span |
