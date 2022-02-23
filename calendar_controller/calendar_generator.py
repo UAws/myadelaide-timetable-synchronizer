@@ -1,5 +1,8 @@
+import pathlib
 from ics import Calendar, Event
 from typing import List
+
+from loguru import logger
 
 from spider.adt.course import Course
 from datetime import datetime
@@ -50,6 +53,8 @@ class Calendar_generator:
             # https://github.com/ics-py/ics-py/issues/316#issue-1144819148
             f.write(str(_calendar))
             # And it's done !
+
+            logger.info('ics file location : {current_dir}/my.ics'.format(current_dir=pathlib.Path().resolve()))
 
             # iCalendar-formatted data is also available in a string
             # str(c)
