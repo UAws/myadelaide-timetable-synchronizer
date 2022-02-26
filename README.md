@@ -26,7 +26,7 @@ python main.py
 
 The author of project (me) takes serious consideration to protect your privacy and data integrity. 
 
-This tool will request the your timetable on your behavior via api.adelaide.edu.au, all of sensitive data including authorization header, username, password **WILL NOT** store to any persistent storage even on your computer. All of data transformation including details of timetable events are  processing within the memory, and will destroy once program finish execution. 
+This tool will request the your timetable on your behalf via api.adelaide.edu.au, all of sensitive data including authorization header, username, password **WILL NOT** store to any persistent storage even on your computer. All of data transformation including details of timetable events are processing within the memory, and will destroy once program finish execution. 
 
 This tool will and **ONLY** requests following domains under your authorization: 
 
