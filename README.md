@@ -52,7 +52,7 @@ As this project is **NOT** an artifact of UOFA, and there is no clear documents 
 
 3. how does auther test the code
 
-   This project is based on several external api and services and UOFA authentication platform based on Otka 2FA, therefore there is tool change for create CI (continues integration) for Auto Testing. In this senario the test has been done locally on MacOS 12.2, Linux ubuntu 20.04, Window 10 LTSC (thanks for friends verify the functionality for different system)
+   This project is based on several external api and services and UOFA authentication platform based on Okta 2FA, therefore there is tool change for create CI (continues integration) for Auto Testing. In this senario the test has been done locally on MacOS 12.2, Linux ubuntu 20.04, Window 10 LTSC (thanks for friends verify the functionality for different system)
 
 4. How to get support for this tool
 
