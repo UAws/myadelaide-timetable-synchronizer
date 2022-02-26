@@ -46,7 +46,7 @@ As this project is **NOT** an artifact of UOFA, and there is no clear documents 
 
    Google how to upload ics to {your preferred calendar}
 
-2. how to prepare the location environment
+2. how to prepare the local environment
 
    Google how to install python3 to {your OS} {macos | Linux | windows}
 
