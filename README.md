@@ -56,7 +56,9 @@ As this project is **NOT** an artifact of UOFA, and there is no clear documents 
 
 4. How to get support for this tool
 
-   Open a github issue and provide your OS version, Python version, Chrome version.
+   Open a github issue and provide your OS version, Python version, Chrome version as collect error messages and logs as much as you can.
+   The support scope only include program logic of this tool, NOT including how to install python, how to calendar, how to login to xxx services...
+   I am happy to discuss any technical details used within or out of this project, you could reach me via email, the Email Could found at [my github profile](https://github.com/AkideLiu)
 
 ## Licensed under MIT
 
