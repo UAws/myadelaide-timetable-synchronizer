@@ -42,8 +42,9 @@ class Calendar_generator:
 
                 location='{_building}/{_room_number}/{_room_description}'.format(
                     _building=course.f_descr,
-                    _room_number=course.b_catalog_nbr,
+                    _room_number=course.e_room,
                     _room_description=course.e_descr
+
                 )
             )
 
