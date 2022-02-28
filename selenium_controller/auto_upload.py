@@ -71,8 +71,15 @@ class AutoUpload:
         time.sleep(1)
 
         # 12 | click | xpath=//div[6]/div/div/div/div/div/div/button[4]/span |
-        self.driver.find_elements_by_xpath("//button/span[contains(.,\'{name}\')]".format(name=calendar_name))[
-            1].click()
+        calendar_divs = self.driver.find_elements_by_xpath(
+            "//button/span[contains(.,\'{name}\')]".format(name=calendar_name))
+
+        while len(calendar_divs) <= 1:
+            calendar_divs = self.driver.find_elements_by_xpath(
+                "//button/span[contains(.,\'{name}\')]".format(name=calendar_name))
+            time.sleep(1)
+
+        calendar_divs[1].click()
         # 13 | click | xpath=//div[3]/div/div/button/span/span/span |
         self._wait_until_find(By.XPATH, "//div[3]/div/div/button/span/span/span").click()
 
