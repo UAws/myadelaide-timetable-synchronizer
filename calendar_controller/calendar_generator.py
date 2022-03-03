@@ -36,7 +36,7 @@ class Calendar_generator:
 
                 description='{_subject} {_course_number} - {_course_description} '.format(
                     _subject=course.b_subject,
-                    _course_number=course.a_strm,
+                    _course_number=course.b_catalog_nbr,
                     _course_description=course.b_descr
                 ),
 
