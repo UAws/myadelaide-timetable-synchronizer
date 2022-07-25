@@ -9,7 +9,7 @@ A fascinating tool that synchronizes your timetable to University Managed Office
 
 ## Prerequisites 
 1. Chrome Browser
-2. Python >= 3.6
+2. Python >= 3.7
 
 ## Quick Start
 
