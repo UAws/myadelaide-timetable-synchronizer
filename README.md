@@ -39,6 +39,7 @@ As this project is **NOT** an artifact of UOFA, and there is no clear documents 
 
 1. The Api is not official documented by UOFA, any further API change will damage the logic inside of program
 2.  The automatic upload ics to Office365 relay on the `selenium` AKA end to end testing system, therefore this component based on the UI of Office365, any further Office365 UI change will damage the logic inside of program
+3.  For users using M1 Macs, an older version of chrome will need to be installed. The arm64 version for the driver doesnt seem to work. Recommended Version: 90.0.4430.72
 
 ## FAQ
 

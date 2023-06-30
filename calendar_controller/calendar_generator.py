@@ -23,8 +23,8 @@ class Calendar_generator:
             course_event = Event(
                 # abbreviation by first character of the course description
                 name=
-                ''.join(str(word)[0].upper() for word in course.b_descr.replace('UG', '').replace('&', '').split())
-                + ' ' + course.d_xlatlongname
+                course.b_descr
+                + ' - ' + course.d_xlatlongname
                 ,
                 # date convert
                 # https://stackoverflow.com/a/466376/14207562
